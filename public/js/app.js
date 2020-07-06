@@ -7,16 +7,17 @@ const resultMessage = document.querySelector('#result')
 
 weatherForm.addEventListener('submit',(e)=>{
     e.preventDefault();
-    errorMessage.textContent ='';
+    errorMessage.textContent ='Loading......';
     resultMessage.textContent ='';
     const location=searchTerm.value;
-    fetch('http://localhost:3000/weather?address='+location).then((response)=>{
+    fetch('/weather?address='+location).then((response)=>{
         response.json().then((data) => {
             if(data.error){
                 errorMessage.textContent = data.error
             }
             else{
-                 resultMessage.textContent = 'The current temperature is '+data.result.currentemp+' degrees but it feelslike '+data.result.feelslike+' @ '+data.location;
+                 errorMessage.textContent = 'Weather Report @ '+data.location;
+                 resultMessage.textContent = 'The current temperature is '+data.result.currentemp+' degrees but it feelslike '+data.result.feelslike;
             }
         })
     })

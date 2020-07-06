@@ -4,6 +4,8 @@ const hbs = require('hbs');
 const geocode= require('../src/utils/geocode');
 const forecast = require('../src/utils/forecast');
 
+const port = process.env.PORT || 3000
+
 // Path setup for public and view folders
 const publicFolderPath = path.join(__dirname,"../public")
 const viewsFolderPath = path.join(__dirname, "../templates/views")
@@ -89,6 +91,6 @@ app.get('*',(req, res)=>{
     })
 
 })
-app.listen(3000,()=>{
-console.log("Server started at port 3000");
+app.listen(port,()=>{
+console.log("Server started at port "+port);
 })
