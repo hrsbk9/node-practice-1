@@ -23,7 +23,7 @@ app.use(express.static(publicFolderPath));
 
 app.get('',(req, res)=>{
     res.render('index', {
-        title:'Welcome page',
+        title:'Weather',
         name:'Harsha'
     })
 
