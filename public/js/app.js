@@ -17,7 +17,7 @@ weatherForm.addEventListener('submit',(e)=>{
             }
             else{
                  errorMessage.textContent = 'Weather Report @ '+data.location;
-                 resultMessage.textContent = 'The current temperature is '+data.result.currentemp+' degrees but it feelslike '+data.result.feelslike;
+                 resultMessage.textContent = 'The current temperature is '+data.result.currentemp+' degrees but it feelslike '+data.result.feelslike+'. Weather predication :  ' +data.result.weather_report+ ' and humidity is '+data.result.humidity;
             }
         })
     })
